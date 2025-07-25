@@ -1,6 +1,4 @@
-// models/User.js
 import mongoose from "mongoose";
-// import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema(
   {
@@ -8,6 +6,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       enum: ["customer", "business"],
       required: true,
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
     },
     email: {
       type: String,
